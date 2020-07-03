@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { SelectComponent } from './select/select.component';
 import { SelectConfigDirective } from './select-config.directive';
 import { SelectConfig, setSelectConfig } from './select/select.config';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectComponent,
-    SelectConfigDirective
+    SelectConfigDirective,
+    TodosComponent
   ],
   imports: [
     BrowserModule
