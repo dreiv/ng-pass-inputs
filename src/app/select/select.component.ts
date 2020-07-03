@@ -1,12 +1,21 @@
 import { Component, Input } from '@angular/core';
+import { SelectConfig } from './select.config';
 
 @Component({
   selector: 'app-select',
-  templateUrl: './select.component.html'
+  template: `
+    <p><b>Size</b> {{ size }}</p>
+    <p><b>Placement:</b> {{ placement }}</p>
+  `
 })
 export class SelectComponent {
   @Input()
-  size: 'sm' | 'md' | 'lg' = 'md';
+  size: SelectConfig['size'];
   @Input()
-  placement: 'top' | 'bottom' | 'right' | 'left' = 'bottom';
+  placement: SelectConfig['placement'];
+
+  constructor(private config: SelectConfig) {
+    this.size = config.size;
+    this.placement = config.placement;
+  }
 }
